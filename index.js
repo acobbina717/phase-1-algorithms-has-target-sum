@@ -1,5 +1,22 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  // for (let i = 0; i <= array.length; i++) {
+  //   const j = array.length - 1 - i
+  //   if (array[i] + array[j] !== target) {
+  //     return false
+  //   } else {
+  //     return true
+  //   }
+  // }
+  for (let i = 0; i < array.length; i++) {
+    const complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === complement) return true;
+    }
+  }
+  return false;
+
+
 }
 
 /* 
@@ -8,6 +25,20 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  retrun true if any 2 numbers in array added together equals the target number
+  iterate from the start index and end index of array
+  add numbers from both index
+  return false if both numbers added !== target
+
+  for(let i = 0; i < array.length / 2; i++){
+    const j = array.length -1 -i
+    if (array[i] + array[j] === target){
+    return true;
+  }else{
+    return false
+  }
+  }
+  
 */
 
 /*
